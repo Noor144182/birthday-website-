@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Birthday Surprise ❤️</title>
+    <title>Happy Birthday Faseeh ❤️</title>
 
     <style>
-
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html,
         body {
-            margin: 0;
-            padding: 0;
             width: 100%;
             min-height: 100%;
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
         }
 
         body {
             overflow-x: hidden;
-            background: linear-gradient(135deg, #ffe4ec, #ffd6e7, #fff0f5);
+            background: #ffd6e7;
         }
 
-
         /* =========================
-           PAGE SYSTEM
+           COMMON PAGE
         ========================= */
 
         .page {
             display: none;
-            min-height: 100vh;
-            width: 100%;
             position: relative;
+            width: 100%;
+            min-height: 100vh;
             overflow: hidden;
         }
 
@@ -44,358 +40,15 @@
             display: flex;
         }
 
-
-        /* =========================
-           PAGE 1
-        ========================= */
-
-        #page1 {
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .page1-content {
-            width: 100%;
-            max-width: 750px;
+        .content {
             position: relative;
-            z-index: 2;
-        }
-
-        .flowers {
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
-
-        .small-title {
-            font-size: 25px;
-            color: #d6336c;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        #page1 h1 {
-            font-size: 48px;
-            color: #c9184a;
-            margin: 10px 0 20px;
-        }
-
-        .special {
-            font-size: 28px;
-            color: #ff477e;
-            font-weight: bold;
-            margin-bottom: 25px;
-        }
-
-        .message {
-            max-width: 650px;
-            margin: auto;
-            font-size: 20px;
-            line-height: 1.7;
-            color: #5c374c;
-        }
-
-
-        /* =========================
-           BUTTON
-        ========================= */
-
-        .button {
-            margin-top: 30px;
-            border: none;
-            border-radius: 30px;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-
-            background: linear-gradient(
-                135deg,
-                #ff477e,
-                #c9184a
-            );
-
-            cursor: pointer;
-
-            box-shadow:
-                0 8px 20px rgba(201, 24, 74, 0.25);
-
-            transition: 0.3s ease;
-        }
-
-        .button:hover {
-            transform: translateY(-3px) scale(1.03);
-
-            box-shadow:
-                0 12px 25px rgba(201, 24, 74, 0.35);
-        }
-
-
-        /* =========================
-           PAGE 2
-        ========================= */
-
-        #page2 {
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .page2-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .celebrate {
-            font-size: 38px;
-            color: #c9184a;
-            margin: 20px 0;
-        }
-
-        .cake {
-            font-size: 150px;
-            margin: 10px 0;
-
-            animation:
-                cakeBounce 2s infinite ease-in-out;
-        }
-
-        @keyframes cakeBounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-
-        }
-
-        .candles {
-            font-size: 45px;
-            margin-top: -20px;
-        }
-
-        .cake-text {
-            font-size: 22px;
-            color: #5c374c;
-            margin-top: 25px;
-        }
-
-
-        /* =========================
-           BALLOONS
-        ========================= */
-
-        .balloon {
-            position: absolute;
-            font-size: 55px;
-            z-index: 1;
-
-            animation:
-                balloonFloat 3s ease-in-out infinite;
-        }
-
-        .b1 {
-            left: 7%;
-            top: 12%;
-        }
-
-        .b2 {
-            right: 8%;
-            top: 18%;
-            animation-delay: 0.5s;
-        }
-
-        .b3 {
-            left: 12%;
-            bottom: 15%;
-            animation-delay: 1s;
-        }
-
-        .b4 {
-            right: 12%;
-            bottom: 12%;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes balloonFloat {
-
-            0%,
-            100% {
-                transform:
-                    translateY(0)
-                    rotate(-3deg);
-            }
-
-            50% {
-                transform:
-                    translateY(-15px)
-                    rotate(3deg);
-            }
-
-        }
-
-
-        /* =========================
-           PAGE 3 - PHOTOS
-        ========================= */
-
-        #page3 {
-            display: none;
-
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-
-            text-align: center;
-
-            padding: 45px 20px 60px;
-
-            overflow-y: auto;
-        }
-
-        #page3.active {
-            display: flex;
-        }
-
-        .photos-content {
+            z-index: 10;
             width: 100%;
             max-width: 900px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .photos-title {
-            font-size: 40px;
-            color: #c9184a;
-
-            margin: 10px 0 30px;
-        }
-
-        .photos-grid {
-            width: 100%;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 22px;
-        }
-
-        .photo-card {
-            width: 100%;
-
-            aspect-ratio: 1 / 1;
-
-            overflow: hidden;
-
-            border-radius: 22px;
-
-            background: white;
-
-            padding: 7px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(201, 24, 74, 0.18);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            border-radius: 17px;
-        }
-
-
-        /* =========================
-           PAGE 4 - WISHES
-        ========================= */
-
-        #page4 {
-            align-items: center;
-            justify-content: center;
-
+            margin: auto;
+            padding: 50px 25px;
             text-align: center;
-
-            padding: 50px 20px;
-
-            overflow-y: auto;
         }
-
-        .wishes-content {
-            width: 100%;
-            max-width: 850px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .heart {
-            font-size: 70px;
-            margin-bottom: 10px;
-
-            animation:
-                heartBeat 1.5s infinite;
-        }
-
-        @keyframes heartBeat {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.12);
-            }
-
-        }
-
-        .wish-title {
-            font-size: 42px;
-            color: #c9184a;
-
-            margin: 10px 0 30px;
-        }
-
-        .wish-box {
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 35px 40px;
-
-            box-shadow:
-                0 12px 35px
-                rgba(201, 24, 74, 0.18);
-
-            color: #5c374c;
-
-            font-size: 19px;
-
-            line-height: 1.8;
-        }
-
-        .flowers-bottom {
-            font-size: 40px;
-
-            margin-top: 30px;
-        }
-
 
         /* =========================
            SPRINKLES
@@ -403,61 +56,35 @@
 
         .sprinkle-container {
             position: absolute;
-
             top: 0;
             left: 0;
-
             width: 100%;
             height: 100%;
-
             overflow: hidden;
-
             pointer-events: none;
-
             z-index: 9999;
         }
 
         .sprinkle {
             position: absolute;
-
             top: -30px;
-
             border-radius: 4px;
-
             opacity: 0;
-
             box-shadow:
-                2px 3px 5px
-                rgba(0, 0, 0, 0.25),
+                2px 3px 5px rgba(0, 0, 0, 0.25),
+                inset -2px -2px 3px rgba(0, 0, 0, 0.15),
+                inset 2px 2px 3px rgba(255, 255, 255, 0.35);
 
-                inset -2px -2px 3px
-                rgba(0, 0, 0, 0.15),
-
-                inset 2px 2px 3px
-                rgba(255, 255, 255, 0.35);
-
-            animation-name:
-                sprinkleFall;
-
-            animation-timing-function:
-                linear;
-
-            animation-fill-mode:
-                forwards;
+            animation-name: sprinkleFall;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
         }
 
         @keyframes sprinkleFall {
-
             0% {
-
                 opacity: 0;
-
                 transform:
-                    translate3d(
-                        0,
-                        -40px,
-                        0
-                    )
+                    translate3d(0, -40px, 0)
                     rotateX(0deg)
                     rotateY(0deg)
                     rotateZ(0deg);
@@ -468,51 +95,364 @@
             }
 
             100% {
-
                 opacity: 0.9;
-
                 transform:
-                    translate3d(
-                        var(--move-x),
-                        110vh,
-                        0
-                    )
+                    translate3d(var(--move-x), 110vh, 0)
                     rotateX(720deg)
                     rotateY(540deg)
                     rotateZ(1080deg);
             }
-
         }
-
 
         /* =========================
-           TABLET
+           PAGE 1
         ========================= */
 
-        @media (max-width: 800px) {
-
-            #page1 h1 {
-                font-size: 40px;
-            }
-
-            .celebrate {
-                font-size: 32px;
-            }
-
-            .photos-title {
-                font-size: 34px;
-            }
-
-            .wish-title {
-                font-size: 36px;
-            }
-
-            .cake {
-                font-size: 120px;
-            }
-
+        #page1 {
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at top left, #fff0f6, transparent 35%),
+                linear-gradient(135deg, #ffd6e7, #ffb6d2);
         }
 
+        #page1 .content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            font-size: 25px;
+            font-weight: 600;
+            color: #d6336c;
+            margin-bottom: 18px;
+        }
+
+        #page1 h1 {
+            font-size: clamp(50px, 9vw, 95px);
+            color: #c9184a;
+            line-height: 1.05;
+            margin-bottom: 25px;
+            text-shadow:
+                3px 3px 0 #fff,
+                5px 5px 15px rgba(180, 20, 80, 0.2);
+        }
+
+        .special {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.75);
+            color: #b5174b;
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .message {
+            max-width: 700px;
+            margin: 0 auto 35px;
+            color: #6d214f;
+            font-size: 21px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .next-btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 16px 32px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff477e, #d81b60);
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow:
+                0 10px 25px rgba(216, 27, 96, 0.3);
+            transition: 0.25s ease;
+        }
+
+        .next-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow:
+                0 14px 30px rgba(216, 27, 96, 0.4);
+        }
+
+        .next-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* =========================
+           PAGE 2 - CAKE
+        ========================= */
+
+        #page2 {
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at 20% 20%, #fff5fa, transparent 30%),
+                linear-gradient(135deg, #ffe0ec, #ffc1d8);
+        }
+
+        #page2 h2 {
+            font-size: clamp(35px, 6vw, 65px);
+            color: #c9184a;
+            margin-bottom: 35px;
+        }
+
+        .cake-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 35px;
+        }
+
+        .cake {
+            position: relative;
+            width: 270px;
+            height: 180px;
+            margin: 25px auto 45px;
+        }
+
+        .cake-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            width: 230px;
+            height: 75px;
+            border-radius: 12px 12px 25px 25px;
+            background: linear-gradient(
+                to bottom,
+                #ff8fab,
+                #ff5d8f
+            );
+            box-shadow: 0 10px 0 #d6336c;
+        }
+
+        .cake-middle {
+            position: absolute;
+            bottom: 65px;
+            left: 35px;
+            width: 200px;
+            height: 55px;
+            border-radius: 12px;
+            background: linear-gradient(
+                to bottom,
+                #ffd6e7,
+                #ffadc6
+            );
+        }
+
+        .cream {
+            position: absolute;
+            bottom: 108px;
+            left: 20px;
+            width: 230px;
+            height: 30px;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cherry {
+            position: absolute;
+            top: 35px;
+            width: 22px;
+            height: 22px;
+            background: #e63946;
+            border-radius: 50%;
+            box-shadow: inset -4px -4px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cherry1 {
+            left: 70px;
+        }
+
+        .cherry2 {
+            left: 125px;
+        }
+
+        .cherry3 {
+            left: 180px;
+        }
+
+        .candle {
+            position: absolute;
+            bottom: 132px;
+            width: 12px;
+            height: 45px;
+            background: #6c5ce7;
+            border-radius: 5px;
+        }
+
+        .candle1 {
+            left: 85px;
+        }
+
+        .candle2 {
+            left: 129px;
+        }
+
+        .candle3 {
+            left: 173px;
+        }
+
+        .flame {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 15px;
+            height: 20px;
+            transform: translateX(-50%);
+            background: #ffb703;
+            border-radius: 50% 50% 50% 0;
+            rotate: -45deg;
+            box-shadow: 0 0 15px #ffb703;
+            animation: flame 0.8s infinite alternate;
+        }
+
+        @keyframes flame {
+            from {
+                transform: translateX(-50%) scale(1);
+            }
+
+            to {
+                transform: translateX(-50%) scale(1.15);
+            }
+        }
+
+        .cake-text {
+            color: #7b234e;
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           PAGE 3 - PHOTOS
+        ========================= */
+
+        #page3 {
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at top right, #fff1f7, transparent 35%),
+                linear-gradient(135deg, #ffd9e8, #ffc1d6);
+        }
+
+        #page3 .content {
+            max-width: 1100px;
+        }
+
+        #page3 h2 {
+            color: #c9184a;
+            font-size: clamp(35px, 6vw, 60px);
+            margin-bottom: 35px;
+        }
+
+        .photos-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 0 auto 35px;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 12px;
+            border-radius: 20px;
+            box-shadow:
+                0 10px 30px rgba(130, 20, 70, 0.18);
+            transition: 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-6px) rotate(1deg);
+        }
+
+        .photo-card img {
+            display: block;
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        /* =========================
+           PAGE 4 - WISHES
+        ========================= */
+
+        #page4 {
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at top left, #fff4f8, transparent 35%),
+                linear-gradient(135deg, #ffd7e6, #ffb8d0);
+        }
+
+        #page4 .content {
+            max-width: 950px;
+        }
+
+        .flowers {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        #page4 h2 {
+            color: #c9184a;
+            font-size: clamp(35px, 6vw, 60px);
+            margin-bottom: 25px;
+        }
+
+        .heart {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .wish-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow:
+                0 15px 45px rgba(120, 20, 60, 0.18);
+            text-align: left;
+        }
+
+        .wish-box p {
+            color: #5c2142;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .final-line {
+            text-align: center;
+            color: #c9184a;
+            font-size: 25px;
+            font-weight: 700;
+            margin-top: 25px;
+        }
 
         /* =========================
            MOBILE
@@ -520,191 +460,79 @@
 
         @media (max-width: 600px) {
 
-            #page1 {
-                padding: 25px 18px;
-            }
-
-            .flowers {
-                font-size: 34px;
-                margin-bottom: 15px;
+            .content {
+                padding: 35px 16px;
             }
 
             .small-title {
-                font-size: 20px;
+                font-size: 19px;
             }
 
             #page1 h1 {
-                font-size: 32px;
-                line-height: 1.25;
+                font-size: 50px;
             }
 
             .special {
-                font-size: 21px;
+                font-size: 18px;
+                padding: 10px 18px;
             }
 
             .message {
-                font-size: 16px;
+                font-size: 17px;
                 line-height: 1.6;
             }
 
-            .button {
+            .next-btn {
                 font-size: 16px;
-                padding: 13px 22px;
+                padding: 14px 24px;
             }
 
-
-            /* PAGE 2 */
-
-            #page2 {
-                padding: 35px 15px;
-            }
-
-            .celebrate {
-                font-size: 27px;
-                line-height: 1.3;
+            #page2 h2,
+            #page3 h2,
+            #page4 h2 {
+                font-size: 35px;
             }
 
             .cake {
-                font-size: 105px;
-            }
-
-            .candles {
-                font-size: 35px;
+                transform: scale(0.85);
+                margin-top: 5px;
+                margin-bottom: 20px;
             }
 
             .cake-text {
                 font-size: 17px;
-                line-height: 1.5;
-            }
-
-            .balloon {
-                font-size: 40px;
-            }
-
-            .b1 {
-                left: 3%;
-                top: 7%;
-            }
-
-            .b2 {
-                right: 3%;
-                top: 10%;
-            }
-
-            .b3 {
-                left: 4%;
-                bottom: 8%;
-            }
-
-            .b4 {
-                right: 4%;
-                bottom: 8%;
-            }
-
-
-            /* PAGE 3 */
-
-            #page3 {
-                padding: 30px 12px 50px;
-            }
-
-            .photos-title {
-                font-size: 29px;
-                margin-bottom: 22px;
             }
 
             .photos-grid {
-                gap: 12px;
-            }
-
-            .photo-card {
-                border-radius: 16px;
-                padding: 5px;
+                grid-template-columns: 1fr;
+                gap: 18px;
             }
 
             .photo-card img {
-                border-radius: 12px;
-            }
-
-            #page3 .button {
-                margin-top: 25px;
-            }
-
-
-            /* PAGE 4 */
-
-            #page4 {
-                padding: 35px 15px 50px;
-            }
-
-            .heart {
-                font-size: 55px;
-            }
-
-            .wish-title {
-                font-size: 29px;
-                line-height: 1.3;
+                height: 330px;
             }
 
             .wish-box {
                 padding: 25px 20px;
+            }
 
-                border-radius: 20px;
-
+            .wish-box p {
                 font-size: 16px;
-
                 line-height: 1.7;
             }
 
-            .flowers-bottom {
-                font-size: 30px;
+            .flowers {
+                font-size: 32px;
             }
 
+            .heart {
+                font-size: 48px;
+            }
         }
-
-
-        /* =========================
-           VERY SMALL PHONES
-        ========================= */
-
-        @media (max-width: 380px) {
-
-            #page1 h1 {
-                font-size: 28px;
-            }
-
-            .special {
-                font-size: 19px;
-            }
-
-            .message {
-                font-size: 15px;
-            }
-
-            .celebrate {
-                font-size: 24px;
-            }
-
-            .cake {
-                font-size: 90px;
-            }
-
-            .photos-title {
-                font-size: 26px;
-            }
-
-            .wish-title {
-                font-size: 26px;
-            }
-
-        }
-
     </style>
 </head>
 
-
 <body>
-
 
     <!-- =====================================================
          PAGE 1
@@ -712,58 +540,34 @@
 
     <section id="page1" class="page active">
 
-        <div
-            id="sprinkles1"
-            class="sprinkle-container">
-        </div>
+        <div id="sprinkles1" class="sprinkle-container"></div>
 
-
-        <div class="page1-content">
-
-            <div class="flowers">
-                🌸 🌷 🌸
-            </div>
-
+        <div class="content">
 
             <div class="small-title">
                 Happy Birthday Faseeh 🎂❤️
             </div>
 
-
             <h1>
                 My Jannnaaa 💕
             </h1>
-
 
             <div class="special">
                 ✨ To My Jannnaaa ✨
             </div>
 
-
             <p class="message">
-
-                Today is your special day,
-                and I just want you to know
-                how much you mean to me.
-
-                You are not just someone special,
+                Today is your special day, and I just want you to know
+                how much you mean to me. You are not just someone special,
                 you are my favorite person. ❤️
-
             </p>
 
-
-            <button
-                class="button"
-                onclick="showCake()">
-
+            <button class="next-btn" onclick="showCake()">
                 🎁 Open Your Surprise
-
             </button>
 
         </div>
-
     </section>
-
 
 
     <!-- =====================================================
@@ -772,262 +576,162 @@
 
     <section id="page2" class="page">
 
+        <div id="sprinkles2" class="sprinkle-container"></div>
 
-        <div
-            id="sprinkles2"
-            class="sprinkle-container">
-        </div>
+        <div class="content">
 
-
-        <div class="balloon b1">
-            🎈
-        </div>
-
-        <div class="balloon b2">
-            🎈
-        </div>
-
-        <div class="balloon b3">
-            🎈
-        </div>
-
-        <div class="balloon b4">
-            🎈
-        </div>
-
-
-        <div class="page2-content">
-
-
-            <h2 class="celebrate">
+            <h2>
                 A Birthday Cake For My Man! 🎂❤️
             </h2>
 
+            <div class="cake-area">
 
-            <div class="cake">
-                🎂
+                <div class="cake">
+
+                    <div class="candle candle1">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle candle2">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle candle3">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="cherry cherry1"></div>
+                    <div class="cherry cherry2"></div>
+                    <div class="cherry cherry3"></div>
+
+                    <div class="cream"></div>
+                    <div class="cake-middle"></div>
+                    <div class="cake-bottom"></div>
+
+                </div>
+
+                <p class="cake-text">
+                    Make a wish, my jannnaaa...
+                    and blow your candles! ✨❤️
+                </p>
+
+                <button class="next-btn" onclick="showPhotos()">
+                    📸 See Our Memories
+                </button>
+
             </div>
-
-
-            <div class="candles">
-                🕯️ 🕯️ 🕯️
-            </div>
-
-
-            <p class="cake-text">
-
-                Make a wish,
-                my jannnaaa...
-                and blow your candles! ✨❤️
-
-            </p>
-
-
-            <button
-                class="button"
-                onclick="showPhotos()">
-
-                💖 Next — Memories
-
-            </button>
 
         </div>
-
     </section>
 
 
-
     <!-- =====================================================
-         PAGE 3 - PHOTOS
+         PAGE 3
     ====================================================== -->
 
     <section id="page3" class="page">
 
+        <div id="sprinkles3" class="sprinkle-container"></div>
 
-        <div
-            id="sprinkles3"
-            class="sprinkle-container">
-        </div>
+        <div class="content">
 
-
-        <div class="photos-content">
-
-
-            <h2 class="photos-title">
+            <h2>
                 Our Beautiful Memories ❤️
             </h2>
 
-
             <div class="photos-grid">
 
+                <!-- IMPORTANT:
+                     Images are in the ROOT of GitHub repository.
+                     Therefore NO images/ folder is used.
+                -->
 
                 <div class="photo-card">
-
-                    <img
-                        src="images/photo1.jpg"
-                        alt="Memory 1">
-
+                    <img src="photo1.jpeg" alt="Memory 1">
                 </div>
-
 
                 <div class="photo-card">
-
-                    <img
-                        src="images/photo2.jpg"
-                        alt="Memory 2">
-
+                    <img src="photo2.jpeg" alt="Memory 2">
                 </div>
-
 
                 <div class="photo-card">
-
-                    <img
-                        src="images/photo3.jpg"
-                        alt="Memory 3">
-
+                    <img src="photo3.jpeg" alt="Memory 3">
                 </div>
-
 
                 <div class="photo-card">
-
-                    <img
-                        src="images/photo4.jpg"
-                        alt="Memory 4">
-
+                    <img src="photo4.jpeg" alt="Memory 4">
                 </div>
-
 
             </div>
 
-
-            <button
-                class="button"
-                onclick="showWishes()">
-
-                💕 One More Surprise
-
+            <button class="next-btn" onclick="showWishes()">
+                💌 Read My Birthday Wish
             </button>
 
-
         </div>
-
     </section>
 
 
-
     <!-- =====================================================
-         PAGE 4 - BIRTHDAY WISHES
+         PAGE 4
     ====================================================== -->
 
     <section id="page4" class="page">
 
+        <div id="sprinkles4" class="sprinkle-container"></div>
 
-        <div
-            id="sprinkles4"
-            class="sprinkle-container">
-        </div>
+        <div class="content">
 
-
-        <div class="wishes-content">
-
-
-            <div class="heart">
-                💖
+            <div class="flowers">
+                🌸 🌷 🌹 🌷 🌸
             </div>
 
-
-            <h2 class="wish-title">
-                Happy Birthday My Jannnaaa! 🎂❤️
+            <h2>
+                Happy Birthday My Jannnaaa ❤️
             </h2>
 
+            <div class="heart">
+                ❤️
+            </div>
 
             <div class="wish-box">
 
-
                 <p>
-
-                    Happy Birthday to my favorite person,
-                    my man, my jannnaaa. ❤️
-
-                    I feel so lucky to have you in my life.
-
-                    You make my days brighter,
-                    my heart happier,
-                    and my world a little more beautiful. 🥹💕
-
+                    Happy Birthday to the most special person in my life.
+                    ❤️ Today is all about celebrating you and the happiness
+                    you bring into my life.
                 </p>
 
-
-                <br>
-
-
                 <p>
-
-                    On your special day,
-                    I wish you endless happiness,
-                    success, good health
-                    and everything your heart desires.
-
-                    May all your dreams come true
-                    and may you always have
-                    a reason to smile. ✨
-
+                    I hope this new year of your life brings you endless
+                    happiness, success, peace and beautiful memories.
+                    You deserve all the good things in this world.
                 </p>
 
-
-                <br>
-
-
                 <p>
-
-                    Thank you for being you
-                    and for making so many
-                    beautiful memories with me.
-
-                    I hope this birthday brings you
-                    as much happiness as you bring
-                    into my life. ❤️
-
+                    Thank you for being such a beautiful part of my life.
+                    Every moment with you is special and every memory with
+                    you is something I want to keep forever.
                 </p>
 
-
-                <br>
-
-
                 <p>
-
-                    Happy Birthday once again,
-                    my jannnaaa. 🎂💖
-
-                    Keep smiling,
-                    keep shining
-                    and always remember
-                    that you are very special to me. 🌸
-
+                    May all your dreams come true and may you always have
+                    reasons to smile. Keep shining, keep smiling and always
+                    stay the amazing person you are. ❤️
                 </p>
 
+                <p class="final-line">
+                    Once again, Happy Birthday My Jannnaaa! 🎂❤️✨
+                </p>
 
             </div>
-
-
-            <div class="flowers-bottom">
-                🌷 🌸 🌺 🌸 🌷
-            </div>
-
 
         </div>
-
     </section>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
-
 </body>
-
 </html>
