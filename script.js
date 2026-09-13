@@ -29,8 +29,6 @@ function showPhotos() {
 
     document.getElementById("page3").classList.add("active");
 
-    document.getElementById("page3").scrollTop = 0;
-
     window.scrollTo(0, 0);
 
     createSprinkles("sprinkles3");
@@ -47,8 +45,6 @@ function showWishes() {
 
     document.getElementById("page4").classList.add("active");
 
-    document.getElementById("page4").scrollTop = 0;
-
     window.scrollTo(0, 0);
 
     createSprinkles("sprinkles4");
@@ -61,24 +57,18 @@ function showWishes() {
 
 function createSprinkles(containerId) {
 
-    const container =
-        document.getElementById(containerId);
-
+    const container = document.getElementById(containerId);
 
     if (!container) {
         return;
     }
 
-
-    // Prevent duplicate sprinkles
-
+    // Don't create sprinkles again
     if (container.children.length > 0) {
         return;
     }
 
-
     const colours = [
-
         "#ff4d6d",
         "#ff85a1",
         "#ffb703",
@@ -91,32 +81,18 @@ function createSprinkles(containerId) {
         "#c77dff",
         "#f72585",
         "#4cc9f0"
-
     ];
 
+    const isMobile = window.innerWidth <= 600;
 
-    const isMobile =
-        window.innerWidth <= 600;
-
-
-    const totalSprinkles =
-        isMobile ? 350 : 700;
+    const totalSprinkles = isMobile ? 350 : 700;
 
 
-    for (
-        let i = 0;
-        i < totalSprinkles;
-        i++
-    ) {
+    for (let i = 0; i < totalSprinkles; i++) {
 
+        const sprinkle = document.createElement("div");
 
-        const sprinkle =
-            document.createElement("div");
-
-
-        sprinkle.classList.add(
-            "sprinkle"
-        );
+        sprinkle.classList.add("sprinkle");
 
 
         // Random colour
@@ -124,14 +100,11 @@ function createSprinkles(containerId) {
         const colour =
             colours[
                 Math.floor(
-                    Math.random() *
-                    colours.length
+                    Math.random() * colours.length
                 )
             ];
 
-
-        sprinkle.style.background =
-            colour;
+        sprinkle.style.background = colour;
 
 
         // Random horizontal position
@@ -148,10 +121,8 @@ function createSprinkles(containerId) {
         const height =
             10 + Math.random() * 13;
 
-
         sprinkle.style.width =
             width + "px";
-
 
         sprinkle.style.height =
             height + "px";
@@ -162,7 +133,6 @@ function createSprinkles(containerId) {
         const duration =
             3 + Math.random() * 5;
 
-
         sprinkle.style.animationDuration =
             duration + "s";
 
@@ -172,16 +142,14 @@ function createSprinkles(containerId) {
         const delay =
             Math.random() * 6;
 
-
         sprinkle.style.animationDelay =
             delay + "s";
 
 
-        // Random sideways movement
+        // Random horizontal movement
 
         const moveX =
             Math.random() * 250 - 125;
-
 
         sprinkle.style.setProperty(
             "--move-x",
@@ -189,7 +157,7 @@ function createSprinkles(containerId) {
         );
 
 
-        // Random starting rotation
+        // Random rotation
 
         sprinkle.style.transform =
             "rotate(" +
@@ -197,17 +165,13 @@ function createSprinkles(containerId) {
             "deg)";
 
 
-        container.appendChild(
-            sprinkle
-        );
-
+        container.appendChild(sprinkle);
     }
-
 }
 
 
 // ============================================================
-// PAGE LOAD
+// START PAGE 1 SPRINKLES
 // ============================================================
 
 document.addEventListener(
