@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise ❤️</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ffe4ec, #ffd6e7, #fff0f5);
+        }
+
+
+        /* =========================
+           PAGE SYSTEM
+        ========================= */
+
+        .page {
+            display: none;
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+
+        /* =========================
+           PAGE 1
+        ========================= */
+
+        #page1 {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .page1-content {
+            width: 100%;
+            max-width: 750px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flowers {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .small-title {
+            font-size: 25px;
+            color: #d6336c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        #page1 h1 {
+            font-size: 48px;
+            color: #c9184a;
+            margin: 10px 0 20px;
+        }
+
+        .special {
+            font-size: 28px;
+            color: #ff477e;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .message {
+            max-width: 650px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #5c374c;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+            margin-top: 30px;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #ff477e,
+                #c9184a
+            );
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px rgba(201, 24, 74, 0.25);
+
+            transition: 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px) scale(1.03);
+
+            box-shadow:
+                0 12px 25px rgba(201, 24, 74, 0.35);
+        }
+
+
+        /* =========================
+           PAGE 2
+        ========================= */
+
+        #page2 {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .page2-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .celebrate {
+            font-size: 38px;
+            color: #c9184a;
+            margin: 20px 0;
+        }
+
+        .cake {
+            font-size: 150px;
+            margin: 10px 0;
+
+            animation:
+                cakeBounce 2s infinite ease-in-out;
+        }
+
+        @keyframes cakeBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        .candles {
+            font-size: 45px;
+            margin-top: -20px;
+        }
+
+        .cake-text {
+            font-size: 22px;
+            color: #5c374c;
+            margin-top: 25px;
+        }
+
+
+        /* =========================
+           BALLOONS
+        ========================= */
+
+        .balloon {
+            position: absolute;
+            font-size: 55px;
+            z-index: 1;
+
+            animation:
+                balloonFloat 3s ease-in-out infinite;
+        }
+
+        .b1 {
+            left: 7%;
+            top: 12%;
+        }
+
+        .b2 {
+            right: 8%;
+            top: 18%;
+            animation-delay: 0.5s;
+        }
+
+        .b3 {
+            left: 12%;
+            bottom: 15%;
+            animation-delay: 1s;
+        }
+
+        .b4 {
+            right: 12%;
+            bottom: 12%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes balloonFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px)
+                    rotate(3deg);
+            }
+
+        }
+
+
+        /* =========================
+           PAGE 3 - PHOTOS
+        ========================= */
+
+        #page3 {
+            display: none;
+
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            text-align: center;
+
+            padding: 45px 20px 60px;
+
+            overflow-y: auto;
+        }
+
+        #page3.active {
+            display: flex;
+        }
+
+        .photos-content {
+            width: 100%;
+            max-width: 900px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .photos-title {
+            font-size: 40px;
+            color: #c9184a;
+
+            margin: 10px 0 30px;
+        }
+
+        .photos-grid {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+        .photo-card {
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            background: white;
+
+            padding: 7px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(201, 24, 74, 0.18);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            border-radius: 17px;
+        }
+
+
+        /* =========================
+           PAGE 4 - WISHES
+        ========================= */
+
+        #page4 {
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            overflow-y: auto;
+        }
+
+        .wishes-content {
+            width: 100%;
+            max-width: 850px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart {
+            font-size: 70px;
+            margin-bottom: 10px;
+
+            animation:
+                heartBeat 1.5s infinite;
+        }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+
+        }
+
+        .wish-title {
+            font-size: 42px;
+            color: #c9184a;
+
+            margin: 10px 0 30px;
+        }
+
+        .wish-box {
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 35px 40px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(201, 24, 74, 0.18);
+
+            color: #5c374c;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+        }
+
+        .flowers-bottom {
+            font-size: 40px;
+
+            margin-top: 30px;
+        }
+
+
+        /* =========================
+           SPRINKLES
+        ========================= */
+
+        .sprinkle-container {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 9999;
+        }
+
+        .sprinkle {
+            position: absolute;
+
+            top: -30px;
+
+            border-radius: 4px;
+
+            opacity: 0;
+
+            box-shadow:
+                2px 3px 5px
+                rgba(0, 0, 0, 0.25),
+
+                inset -2px -2px 3px
+                rgba(0, 0, 0, 0.15),
+
+                inset 2px 2px 3px
+                rgba(255, 255, 255, 0.35);
+
+            animation-name:
+                sprinkleFall;
+
+            animation-timing-function:
+                linear;
+
+            animation-fill-mode:
+                forwards;
+        }
+
+        @keyframes sprinkleFall {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate3d(
+                        0,
+                        -40px,
+                        0
+                    )
+                    rotateX(0deg)
+                    rotateY(0deg)
+                    rotateZ(0deg);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+
+                opacity: 0.9;
+
+                transform:
+                    translate3d(
+                        var(--move-x),
+                        110vh,
+                        0
+                    )
+                    rotateX(720deg)
+                    rotateY(540deg)
+                    rotateZ(1080deg);
+            }
+
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            #page1 h1 {
+                font-size: 40px;
+            }
+
+            .celebrate {
+                font-size: 32px;
+            }
+
+            .photos-title {
+                font-size: 34px;
+            }
+
+            .wish-title {
+                font-size: 36px;
+            }
+
+            .cake {
+                font-size: 120px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            #page1 {
+                padding: 25px 18px;
+            }
+
+            .flowers {
+                font-size: 34px;
+                margin-bottom: 15px;
+            }
+
+            .small-title {
+                font-size: 20px;
+            }
+
+            #page1 h1 {
+                font-size: 32px;
+                line-height: 1.25;
+            }
+
+            .special {
+                font-size: 21px;
+            }
+
+            .message {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 13px 22px;
+            }
+
+
+            /* PAGE 2 */
+
+            #page2 {
+                padding: 35px 15px;
+            }
+
+            .celebrate {
+                font-size: 27px;
+                line-height: 1.3;
+            }
+
+            .cake {
+                font-size: 105px;
+            }
+
+            .candles {
+                font-size: 35px;
+            }
+
+            .cake-text {
+                font-size: 17px;
+                line-height: 1.5;
+            }
+
+            .balloon {
+                font-size: 40px;
+            }
+
+            .b1 {
+                left: 3%;
+                top: 7%;
+            }
+
+            .b2 {
+                right: 3%;
+                top: 10%;
+            }
+
+            .b3 {
+                left: 4%;
+                bottom: 8%;
+            }
+
+            .b4 {
+                right: 4%;
+                bottom: 8%;
+            }
+
+
+            /* PAGE 3 */
+
+            #page3 {
+                padding: 30px 12px 50px;
+            }
+
+            .photos-title {
+                font-size: 29px;
+                margin-bottom: 22px;
+            }
+
+            .photos-grid {
+                gap: 12px;
+            }
+
+            .photo-card {
+                border-radius: 16px;
+                padding: 5px;
+            }
+
+            .photo-card img {
+                border-radius: 12px;
+            }
+
+            #page3 .button {
+                margin-top: 25px;
+            }
+
+
+            /* PAGE 4 */
+
+            #page4 {
+                padding: 35px 15px 50px;
+            }
+
+            .heart {
+                font-size: 55px;
+            }
+
+            .wish-title {
+                font-size: 29px;
+                line-height: 1.3;
+            }
+
+            .wish-box {
+                padding: 25px 20px;
+
+                border-radius: 20px;
+
+                font-size: 16px;
+
+                line-height: 1.7;
+            }
+
+            .flowers-bottom {
+                font-size: 30px;
+            }
+
+        }
+
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            #page1 h1 {
+                font-size: 28px;
+            }
+
+            .special {
+                font-size: 19px;
+            }
+
+            .message {
+                font-size: 15px;
+            }
+
+            .celebrate {
+                font-size: 24px;
+            }
+
+            .cake {
+                font-size: 90px;
+            }
+
+            .photos-title {
+                font-size: 26px;
+            }
+
+            .wish-title {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE 1
+    ====================================================== -->
+
+    <section id="page1" class="page active">
+
+        <div
+            id="sprinkles1"
+            class="sprinkle-container">
+        </div>
+
+
+        <div class="page1-content">
+
+            <div class="flowers">
+                🌸 🌷 🌸
+            </div>
+
+
+            <div class="small-title">
+                Happy Birthday Faseeh 🎂❤️
+            </div>
+
+
+            <h1>
+                My Jannnaaa 💕
+            </h1>
+
+
+            <div class="special">
+                ✨ To My Jannnaaa ✨
+            </div>
+
+
+            <p class="message">
+
+                Today is your special day,
+                and I just want you to know
+                how much you mean to me.
+
+                You are not just someone special,
+                you are my favorite person. ❤️
+
+            </p>
+
+
+            <button
+                class="button"
+                onclick="showCake()">
+
+                🎁 Open Your Surprise
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PAGE 2
+    ====================================================== -->
+
+    <section id="page2" class="page">
+
+
+        <div
+            id="sprinkles2"
+            class="sprinkle-container">
+        </div>
+
+
+        <div class="balloon b1">
+            🎈
+        </div>
+
+        <div class="balloon b2">
+            🎈
+        </div>
+
+        <div class="balloon b3">
+            🎈
+        </div>
+
+        <div class="balloon b4">
+            🎈
+        </div>
+
+
+        <div class="page2-content">
+
+
+            <h2 class="celebrate">
+                A Birthday Cake For My Man! 🎂❤️
+            </h2>
+
+
+            <div class="cake">
+                🎂
+            </div>
+
+
+            <div class="candles">
+                🕯️ 🕯️ 🕯️
+            </div>
+
+
+            <p class="cake-text">
+
+                Make a wish,
+                my jannnaaa...
+                and blow your candles! ✨❤️
+
+            </p>
+
+
+            <button
+                class="button"
+                onclick="showPhotos()">
+
+                💖 Next — Memories
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PAGE 3 - PHOTOS
+    ====================================================== -->
+
+    <section id="page3" class="page">
+
+
+        <div
+            id="sprinkles3"
+            class="sprinkle-container">
+        </div>
+
+
+        <div class="photos-content">
+
+
+            <h2 class="photos-title">
+                Our Beautiful Memories ❤️
+            </h2>
+
+
+            <div class="photos-grid">
+
+
+                <div class="photo-card">
+
+                    <img
+                        src="images/photo1.jpg"
+                        alt="Memory 1">
+
+                </div>
+
+
+                <div class="photo-card">
+
+                    <img
+                        src="images/photo2.jpg"
+                        alt="Memory 2">
+
+                </div>
+
+
+                <div class="photo-card">
+
+                    <img
+                        src="images/photo3.jpg"
+                        alt="Memory 3">
+
+                </div>
+
+
+                <div class="photo-card">
+
+                    <img
+                        src="images/photo4.jpg"
+                        alt="Memory 4">
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="button"
+                onclick="showWishes()">
+
+                💕 One More Surprise
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PAGE 4 - BIRTHDAY WISHES
+    ====================================================== -->
+
+    <section id="page4" class="page">
+
+
+        <div
+            id="sprinkles4"
+            class="sprinkle-container">
+        </div>
+
+
+        <div class="wishes-content">
+
+
+            <div class="heart">
+                💖
+            </div>
+
+
+            <h2 class="wish-title">
+                Happy Birthday My Jannnaaa! 🎂❤️
+            </h2>
+
+
+            <div class="wish-box">
+
+
+                <p>
+
+                    Happy Birthday to my favorite person,
+                    my man, my jannnaaa. ❤️
+
+                    I feel so lucky to have you in my life.
+
+                    You make my days brighter,
+                    my heart happier,
+                    and my world a little more beautiful. 🥹💕
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    On your special day,
+                    I wish you endless happiness,
+                    success, good health
+                    and everything your heart desires.
+
+                    May all your dreams come true
+                    and may you always have
+                    a reason to smile. ✨
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    Thank you for being you
+                    and for making so many
+                    beautiful memories with me.
+
+                    I hope this birthday brings you
+                    as much happiness as you bring
+                    into my life. ❤️
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    Happy Birthday once again,
+                    my jannnaaa. 🎂💖
+
+                    Keep smiling,
+                    keep shining
+                    and always remember
+                    that you are very special to me. 🌸
+
+                </p>
+
+
+            </div>
+
+
+            <div class="flowers-bottom">
+                🌷 🌸 🌺 🌸 🌷
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
